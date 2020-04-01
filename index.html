@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Items and Prices</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Overpass&display=swap"
+      rel="stylesheet"
+    />
+    <script src="assets/scripts/app.js" defer></script>
+  </head>
+  <body>
+    <div class="alert-box">
+      <p>Please enter an item and a price!</p>
+    </div>
+    <main>
+      <table>
+        <thead>
+          <tr>
+            <th>Mark Item</th>
+            <th>Item</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <div id="total-price">
+        <h3>TOTAL PRICE:</h3>
+        <p id="t-price">$0</p>
+      </div>
+
+      <div class="items-prices">
+        <label for="item1">Item *</label>
+        <input type="text" id="item1"/>
+        <label for="price1">Price *</label>
+        <input type="number" id="price1"/>
+        <button id="add-btn">Add Item</button>
+        <button id="delete-button">Delete Item(s)</button>
+      </form>
+    </main>
+  </body>
+</html>
