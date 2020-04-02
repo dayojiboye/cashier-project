@@ -35,7 +35,7 @@ const getTotalPrice = () => {
     (prevValue, curValue) => (prevValue += curValue.price),
     0
   );
-  return (totalPrice.textContent = `$${tPrice}`);
+  return (totalPrice.textContent = '$' + tPrice.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,'));
 };
 
 const deleteItemHandler = function(id) {
@@ -92,11 +92,17 @@ const addItemHandler = () => {
   const itemObj = {
     id: Math.random(),
     item: itemInput.value.trim().toUpperCase(),
-    price: parseInt(priceInput.value)
+    price: parseInt(priceInput.value),
+    formatPrice() {
+      const fprice = this.price
+        .toFixed(2)
+        .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+      return fprice;
+    }
   };
 
   showTableHeader();
-  getNewItem(itemObj.id, itemObj.item, itemObj.price);
+  getNewItem(itemObj.id, itemObj.item, itemObj.formatPrice());
   myItems.push(itemObj);
   getTotalPrice();
   clearInput();
